@@ -45,6 +45,8 @@ public class SampleFunction {
 
         int suma2 = myfunction.Suma(10000, new SampleFunction().Suma(200, 201));
 
+        System.out.println(wynik + "\n" + obliczsume + "\n" + suma2);
+
     }
 
 }
