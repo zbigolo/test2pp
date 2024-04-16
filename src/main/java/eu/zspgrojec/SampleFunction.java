@@ -2,13 +2,15 @@ package eu.zspgrojec;
 
 public class SampleFunction {
 
-    static void Drukuj(String napis){
+
+
+    static  void Drukuj(String napis){
 
         System.out.println(napis + " " + napis);
 
     }
 
-    public int Suma(int liczba1, int liczba2){
+    public  int Suma(int liczba1, int liczba2){
 
         return (liczba1 + liczba2);
     }
@@ -22,31 +24,30 @@ public class SampleFunction {
         
         
         // użycie funkcji non-static
-       // int suma = Suma(10, 7);
+       // int suma = Suma(10, 7); -ERROR
 
         SampleFunction myfunction = new SampleFunction();
 
         int wynik = myfunction.Suma(10, 7);
 
 
-
-
-
-
-
-
-
-
-
-
         System.out.println(myfunction.Suma(100, -100));
 
         int obliczsume = myfunction.Suma(100, myfunction.Suma(10, 7));
 
+
         int suma2 = myfunction.Suma(10000, new SampleFunction().Suma(200, 201));
+
+        suma2 += Math.abs(suma2);
+
+
+
+
 
         System.out.println(wynik + "\n" + obliczsume + "\n" + suma2);
 
     }
+
+    ////
 
 }
