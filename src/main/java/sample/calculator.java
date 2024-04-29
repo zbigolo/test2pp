@@ -19,4 +19,12 @@ public class calculator {
     public int mnozenie(int liczba1, int liczba2) {
         return (liczba1 * liczba2);
     }
+
+    static boolean isTriangle(int bok1,int bok2, int bok3){
+        if((bok1+bok2 > bok3) && (bok2+bok3 > bok1) && (bok1+bok3 > bok2))
+            return true;
+        else
+            return false;
+    }
+
 }
