@@ -77,17 +77,17 @@ public class calculatorTest {
 
     }
 
-  //  @Test
+    @Test
     @DisplayName("Sample Asserations")
-    @RepeatedTest(value = 10, name = LONG_DISPLAY_NAME)
-   // @Disabled
+    //@RepeatedTest(value = 10, name = LONG_DISPLAY_NAME)
+    @Disabled
     void sampleTest(){
-    /*
+     /*
         Dokumentacja JUnit 5 Asserations
         https://junit.org/junit5/docs/5.9.1/api/org.junit.jupiter.api/org/junit/jupiter/api/Assertions.html
-    */
 
-    /*
+
+
         Assertions.assertEquals( expected, actual );
         Assertions.assertNotEquals( expected, actual);
 
@@ -110,38 +110,56 @@ public class calculatorTest {
 
     */
 
-      String[] names = {"James", "John", "Kitten", "Linda", "Philipp"};
-      String[] names1 = {"James", "John", "Kitten", "Linda", "Dr. No"};
+      String[] names = {"James", "John", "Kitten", "Linda", "Dr. No", "Philipp"};
+      String[] names1 = {"James", "John", "Kitten", "Linda", "Dr. No", "Philipp"};
       String names2 = null;
 
       List<String> nameStudent = Arrays.asList("James", "John", "Kitten", "Linda", "Dr. No");
 
-        System.out.println("assertEquals");
-      Assertions.assertEquals(names[0],names1[0],"Spodziewano się równych obiektów");
 
+
+
+
+
+
+        System.out.println("assertEquals");
+        Assertions.assertEquals(names[0],names1[0],"Spodziewano się jednakowych loginow");
+        //Assertions.assertEquals(names[0],names1[1]);
         System.out.println("assertNotEquals");
-        Assertions.assertNotEquals(names[1],names1[0],"Spodziewano się różnych objektow");
+        Assertions.assertNotEquals(names[2],names1[0],"Spodziewano się różnych loginow");
+
 
         System.out.println("assertNotNull");
-        Assertions.assertNotNull(names,"Spodziewano się niepustego objektu");
+        Assertions.assertNotNull(names,"Spodziewano się dowolnego loginu uzytkownika");
 
         System.out.println("assertNull");
-       Assertions.assertNull(names2,"Spodziewano się pustego objektu");
+       Assertions.assertNull(names2,"Sprawdzenie czy istnieje pusty login");
+
+
 
         System.out.println("assertArrayEquals");
-        Assertions.assertArrayEquals(names,names,"Spodziewano się jednakowych tablic");
+        Assertions.assertArrayEquals(names,names1,"Sprawdzenie tablic loginów czy są jednakowe");
+
+
+
 
         System.out.println("assertFalse");
         Assertions.assertFalse(nameStudent :: isEmpty,"Spodziewano się pustego objektu");
 
         System.out.println("assertTrue");
-        Assertions.assertTrue(names.length == names1.length ,"Spodziewano sie obiektów o tej samej liczbie");
+        Assertions.assertTrue(names.length == names1.length ,"Spodziewano się że tablice loginów mają tyle samo danych");
+        Assertions.assertTrue(names[0] != "John" ,"Sprawdzam czy na 2 pozycji jest John");
+
+
+
+        String[] nazwa = names1;
 
         System.out.println("assertSame");
         Assertions.assertSame(nameStudent, nameStudent,"Spodziewano jednakowych obiektów");
+        Assertions.assertSame(names1, nazwa,"Spodziewano jednakowych obiektów");
 
         System.out.println("assertNotSame");
-        Assertions.assertNotSame(names,names2,"Spodziewano się różnych obiektów");
+        Assertions.assertNotSame(names,names1,"Spodziewano się różnych obiektów");
 
         System.out.println("assertAll");
         Assertions.assertAll(
@@ -150,7 +168,7 @@ public class calculatorTest {
         );
 
         System.out.println("assertInstanceOf");
-        Assertions.assertInstanceOf(String.class, names1[0]);
-        Assertions.assertInstanceOf(Integer.class, calculator.signum(10));
+        Assertions.assertInstanceOf(String.class, names1[0],"Spodziewano się obiektu typy String");
+        Assertions.assertInstanceOf(Integer.class, calculator.signum(10), "spodziewano się obiektu typu int");
     }
 }

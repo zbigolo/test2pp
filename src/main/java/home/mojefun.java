@@ -16,6 +16,8 @@ public class mojefun implements funkcje{
         this.number = number;
     }
 
+    public  mojefun(){}
+
     @Override
     public double W(int variable) {
 
